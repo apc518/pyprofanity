@@ -1,0 +1,4 @@
+__pycache__/
+.env
+chat_test.py
+test.py
