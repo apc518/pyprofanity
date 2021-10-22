@@ -1,19 +1,12 @@
-"""
-pyprofanity by Andy Chamberlain
-v0.0.0
-
-Originally part of a discord bot, this is a standalone python script that will
-take a string and determine what profane words are contained therein.
-"""
-
-from os import getpriority
 import re
 import json
 
-with open("profanity.json", "r") as f:
+from profanity import __path__
+
+with open(f"{__path__[0]}/profanity.json", "r") as f:
     profanity = json.load(f)
 
-with open("english_words.txt", "r") as f:
+with open(f"{__path__[0]}/english_words.txt", "r") as f:
     english_words = [x for x in f.read().split("\n") if len(x) > 0]
 
 def get_profanity(strin : str, convert_lookalikes:bool=False) -> bool:
@@ -30,9 +23,10 @@ def get_profanity(strin : str, convert_lookalikes:bool=False) -> bool:
 
     # print(f"{msg=}")
 
-    # convert 1-10 character lookalikes to ascii letters (! -> i, 0 -> o, etc)
+    # convert lookalikes to ascii letters (! -> i, 0 -> o, etc)
     if convert_lookalikes:
         for i in range(0, len(msg)):
+            # check for lookalikes up to ten characters long
             for k in range(1,10):
                 if msg[i:i+k] in profanity["lookalikes"]:
                     msg = msg.replace(msg[i:i+k], profanity["lookalikes"][msg[i:i+k]])

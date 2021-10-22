@@ -1,4 +1,6 @@
 __pycache__/
+profanity/__pycache__/
+profanity.egg-info
 .env
 chat_test.py
 test.py
