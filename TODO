@@ -1,3 +1,4 @@
 - upload to testpypi
 - severity levels (strict, normal, loose)
 - comment the algorithm better
+- use regex for the char pattern matching?
