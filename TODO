@@ -1,3 +1,4 @@
+- make functions to update profanity.json
 - upload to testpypi
 - severity levels (strict, normal, loose)
 - comment the algorithm better
