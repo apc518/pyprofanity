@@ -10,9 +10,10 @@ setup(
     license='MIT',
     packages=['profanity'],
     install_requires=[],
-
     classifiers=[
         'License :: MIT',
         'Programming Language :: Python 3'
-    ]
+    ],
+    include_package_data=True,
+    package_data={ 'profanity': ['data/*.txt', 'data/*.json'] }
 )

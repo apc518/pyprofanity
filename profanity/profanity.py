@@ -3,10 +3,10 @@ import json
 
 from profanity import __path__
 
-with open(f"{__path__[0]}/profanity.json", "r") as f:
+with open(f"{__path__[0]}/data/profanity.json", "r") as f:
     profanity = json.load(f)
 
-with open(f"{__path__[0]}/english_words.txt", "r") as f:
+with open(f"{__path__[0]}/data/english_words.txt", "r") as f:
     english_words = [x for x in f.read().split("\n") if len(x) > 0]
 
 def get_profanity(strin : str, convert_lookalikes:bool=False) -> bool:
