@@ -4,3 +4,4 @@ profanity.egg-info
 .env
 chat_test.py
 test.py
+build
