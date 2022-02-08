@@ -2,8 +2,6 @@
 
 A text-based profanity detector written in python, targeting the English language.
 
-Other similarly structured languages (left-to-right, ascii-based) can be configured fairly trivially, using new files in place of `profanity/english_words.txt` and `profanity/profanity.json`
-
 ## Usage
 ```python
 from profanity import contains_profanity
